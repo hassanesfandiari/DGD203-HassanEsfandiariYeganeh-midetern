@@ -1,0 +1,86 @@
+using System;
+
+class AdventureGame
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to the Adventure Game!");
+
+        // Step 1: Get the player's name
+        Console.Write("What is your name? ");
+        string playerName = Console.ReadLine();
+        Console.WriteLine($"Nice to meet you, {playerName}! Let's begin your journey.\n");
+
+        // Step 2: Ask a series of questions
+        Console.WriteLine("Question 1: You are standing at a crossroads. What do you do?");
+        Console.WriteLine("A) Take the left path into a dense forest.");
+        Console.WriteLine("B) Take the right path towards a towering castle.");
+        Console.WriteLine("C) Stay where you are and wait for someone.");
+        Console.Write("Your choice (A/B/C): ");
+        string choice1 = Console.ReadLine().ToUpper();
+
+        string question2 = "";
+        if (choice1 == "A")
+        {
+            Console.WriteLine("\nYou venture into the forest, hearing strange sounds.");
+            question2 = "You find a glowing object on the ground. What do you do?";
+        }
+        else if (choice1 == "B")
+        {
+            Console.WriteLine("\nYou walk towards the castle and see a drawbridge.");
+            question2 = "The drawbridge is closed. How do you cross it?";
+        }
+        else
+        {
+            Console.WriteLine("\nYou stay put, hoping for help.");
+            question2 = "A mysterious traveler approaches. What do you ask them?";
+        }
+
+        Console.WriteLine($"\nQuestion 2: {question2}");
+        Console.WriteLine("1) Inspect it closely.");
+        Console.WriteLine("2) Ignore it and move on.");
+        Console.WriteLine("3) Take it with you.");
+        Console.Write("Your choice (1/2/3): ");
+        string choice2 = Console.ReadLine();
+
+        Console.WriteLine("\nQuestion 3: You must choose a companion for your journey.");
+        Console.WriteLine("A) A loyal wolf.");
+        Console.WriteLine("B) A wise old wizard.");
+        Console.WriteLine("C) A fierce warrior.");
+        Console.Write("Your choice (A/B/C): ");
+        string choice3 = Console.ReadLine().ToUpper();
+
+        Console.WriteLine("\nQuestion 4: How will you face challenges ahead?");
+        Console.WriteLine("A) With strength.");
+        Console.WriteLine("B) With intelligence.");
+        Console.WriteLine("C) With compassion.");
+        Console.Write("Your choice (A/B/C): ");
+        string choice4 = Console.ReadLine().ToUpper();
+
+        // Step 3: Generate a dynamic summary based on answers
+        Console.WriteLine("\n--- Your Adventure Summary ---");
+
+        if (choice1 == "A")
+            Console.WriteLine($"You bravely ventured into the forest, {playerName}, seeking adventure.");
+        else if (choice1 == "B")
+            Console.WriteLine($"Your curiosity led you to the castle, {playerName}, looking for answers.");
+        else
+            Console.WriteLine($"You chose caution, {playerName}, waiting for the right moment to act.");
+
+        if (choice3 == "A")
+            Console.WriteLine("Your loyal wolf ensures you are never alone in this journey.");
+        else if (choice3 == "B")
+            Console.WriteLine("The wisdom of the wizard helps you solve the toughest challenges.");
+        else
+            Console.WriteLine("The fierce warrior defends you with unmatched strength.");
+
+        if (choice4 == "A")
+            Console.WriteLine("Your strength inspires fear in your enemies.");
+        else if (choice4 == "B")
+            Console.WriteLine("Your intelligence allows you to outsmart every challenge.");
+        else
+            Console.WriteLine("Your compassion earns you allies wherever you go.");
+
+        Console.WriteLine("\nThank you for playing! Your story is just beginning...");
+    }
+}
